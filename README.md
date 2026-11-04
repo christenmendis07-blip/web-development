@@ -1,7 +1,7 @@
 # LeetCode Solutions & Practice Log
 
-**Student Name:** Abdullah Subhaan K  
-**SRN:** R25EF002  
+**Student Name:** Christen Mendis 
+**SRN:** R25EF067
 **Class & Section:** CSE-B (3rd Semester)  
 **Course:** Portfolio Building for Engineering Students — GitHub-Integrated Edition (B25GE0101)  
 **Semester:** 3rd Semester, CSE  
