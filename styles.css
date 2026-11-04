@@ -1,0 +1,365 @@
+/* ===== CSS Variables ===== */
+:root {
+  --primary: #0b3d91;
+  --primary-dark: #082a66;
+  --accent: #f7941d;
+  --accent-dark: #d97a08;
+  --background: #f4f6fb;
+  --surface: #ffffff;
+  --text: #1c2333;
+  --muted: #5b6475;
+  --border: #dde2ee;
+  --radius: 10px;
+  --shadow: 0 4px 14px rgba(11, 61, 145, 0.12);
+  --nav-height: 64px;
+}
+
+/* ===== Base ===== */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+  scroll-padding-top: var(--nav-height);
+}
+
+body {
+  margin: 0;
+  font-family: "Segoe UI", Roboto, Arial, sans-serif;
+  background: var(--background);
+  color: var(--text);
+  line-height: 1.6;
+}
+
+h1, h2, h3 {
+  margin: 0 0 0.6em;
+  line-height: 1.25;
+}
+
+ul {
+  margin: 0;
+  padding-left: 1.2em;
+}
+
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+  clip: rect(0 0 0 0);
+  white-space: nowrap;
+}
+
+/* ===== Fixed Navigation Bar ===== */
+.navbar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: var(--nav-height);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 24px;
+  background: var(--primary);
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.25);
+  z-index: 100;
+}
+
+.logo {
+  color: #fff;
+  font-size: 1.4rem;
+  font-weight: 800;
+  letter-spacing: 1px;
+  text-decoration: none;
+}
+
+.nav-links {
+  display: flex;
+  gap: 8px;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.nav-links a {
+  display: block;
+  padding: 8px 14px;
+  color: #fff;
+  text-decoration: none;
+  border-radius: 6px;
+  transition: background 0.2s, color 0.2s;
+}
+
+.nav-links a:hover,
+.nav-links a:focus-visible {
+  background: var(--accent);
+  color: var(--primary-dark);
+}
+
+/* ===== Hero ===== */
+.hero {
+  padding: calc(var(--nav-height) + 90px) 24px 90px;
+  text-align: center;
+  color: #fff;
+  background: linear-gradient(135deg, var(--primary) 0%, #1f6feb 60%, var(--accent) 130%);
+}
+
+.hero h1 {
+  font-size: clamp(1.8rem, 5vw, 3.2rem);
+  max-width: 800px;
+  margin: 0 auto 1.2em;
+}
+
+.hero-buttons {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 16px;
+}
+
+/* ===== Buttons ===== */
+.btn {
+  display: inline-block;
+  padding: 12px 28px;
+  border: none;
+  border-radius: 999px;
+  font-size: 1rem;
+  font-weight: 600;
+  text-decoration: none;
+  cursor: pointer;
+  transition: transform 0.15s, background 0.2s, box-shadow 0.2s;
+}
+
+.btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 14px rgba(0, 0, 0, 0.2);
+}
+
+.btn-primary {
+  background: #fff;
+  color: var(--primary);
+}
+
+.btn-primary:hover {
+  background: #e8efff;
+}
+
+.btn-accent {
+  background: var(--accent);
+  color: #1c1300;
+}
+
+.btn-accent:hover {
+  background: var(--accent-dark);
+}
+
+.btn-small {
+  padding: 6px 16px;
+  font-size: 0.9rem;
+}
+
+/* The submit button on the white form card needs a solid background */
+.form .btn-primary {
+  background: var(--primary);
+  color: #fff;
+  margin-top: 8px;
+}
+
+.form .btn-primary:hover {
+  background: var(--primary-dark);
+}
+
+/* ===== Sections ===== */
+.section {
+  max-width: 1000px;
+  margin: 0 auto;
+  padding: 56px 24px 8px;
+}
+
+.section h2 {
+  color: var(--primary);
+  font-size: 1.8rem;
+  padding-bottom: 8px;
+  border-bottom: 3px solid var(--accent);
+  display: inline-block;
+}
+
+/* ===== Cards ===== */
+.card-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: 20px;
+}
+
+.card {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: 22px;
+  box-shadow: var(--shadow);
+  transition: transform 0.2s;
+}
+
+.card-grid .card:hover {
+  transform: translateY(-4px);
+}
+
+.card h3 {
+  color: var(--primary);
+}
+
+.card p {
+  margin: 0;
+  color: var(--muted);
+}
+
+/* ===== Tables ===== */
+.filter {
+  display: block;
+  margin: 8px 0 16px;
+}
+
+.table-wrap {
+  overflow-x: auto;
+  background: var(--surface);
+  border-radius: var(--radius);
+  box-shadow: var(--shadow);
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+  min-width: 640px;
+}
+
+th, td {
+  padding: 14px 16px;
+  text-align: left;
+  border-bottom: 1px solid var(--border);
+}
+
+thead th {
+  background: var(--primary);
+  color: #fff;
+  font-weight: 600;
+  white-space: nowrap;
+}
+
+tbody tr:nth-child(even) {
+  background: #f8faff;
+}
+
+tbody tr:hover {
+  background: #eaf1ff;
+}
+
+.empty-row td {
+  text-align: center;
+  color: var(--muted);
+}
+
+/* ===== Forms ===== */
+.booking-layout {
+  display: grid;
+  grid-template-columns: 2fr 1fr;
+  gap: 24px;
+  align-items: start;
+}
+
+.form {
+  display: flex;
+  flex-direction: column;
+}
+
+.form label {
+  margin: 12px 0 4px;
+  font-weight: 600;
+}
+
+input,
+select {
+  width: 100%;
+  padding: 10px 12px;
+  border: 1px solid var(--border);
+  border-radius: 6px;
+  font: inherit;
+  color: var(--text);
+  background: #fff;
+}
+
+input:focus,
+select:focus {
+  outline: 2px solid var(--accent);
+  border-color: var(--accent);
+}
+
+.filter select {
+  width: auto;
+  min-width: 180px;
+}
+
+/* ===== Booking Summary ===== */
+.summary dl {
+  margin: 0;
+  display: grid;
+  grid-template-columns: auto 1fr;
+  gap: 8px 16px;
+}
+
+.summary dt {
+  font-weight: 600;
+  color: var(--muted);
+}
+
+.summary dd {
+  margin: 0;
+  text-align: right;
+}
+
+.summary dd#sum-total {
+  font-weight: 800;
+  color: var(--primary);
+}
+
+/* ===== Footer ===== */
+.footer {
+  margin-top: 64px;
+  padding: 24px;
+  text-align: center;
+  background: var(--primary-dark);
+  color: #cfd8ee;
+}
+
+.footer p {
+  margin: 0;
+}
+
+/* ===== Responsive ===== */
+@media (max-width: 760px) {
+  .navbar {
+    flex-direction: column;
+    height: auto;
+    padding: 10px 12px;
+  }
+
+  .nav-links {
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+
+  .hero {
+    padding-top: 170px;
+  }
+
+  html {
+    scroll-padding-top: 120px;
+  }
+
+  .booking-layout {
+    grid-template-columns: 1fr;
+  }
+}
