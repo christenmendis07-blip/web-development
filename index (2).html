@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>IPL 2026 Ticket Booking</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+  <!-- Navigation -->
+  <header class="navbar">
+    <a class="logo" href="#home">IPL 2026</a>
+    <nav>
+      <ul class="nav-links">
+        <li><a href="#matches">Matches</a></li>
+        <li><a href="#book">Book Ticket</a></li>
+        <li><a href="#bookings">My Bookings</a></li>
+        <li><a href="#guidelines">Guidelines</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main>
+
+    <!-- Hero -->
+    <section id="home" class="hero">
+      <h1>Experience The Stadium Energy Live!</h1>
+      <div class="hero-buttons">
+        <a class="btn btn-primary" href="#matches">View Schedule</a>
+        <a class="btn btn-accent" href="#book">Book Ticket</a>
+      </div>
+    </section>
+
+    <!-- About -->
+    <section id="about" class="section">
+      <h2>About IPL 2026</h2>
+      <div class="card-grid">
+        <article class="card">
+          <h3>Popular Teams</h3>
+          <ul>
+            <li>CSK</li>
+            <li>MI</li>
+            <li>RCB</li>
+          </ul>
+        </article>
+        <article class="card">
+          <h3>Major Venues</h3>
+          <ul>
+            <li>Chennai</li>
+            <li>Mumbai</li>
+            <li>Bengaluru</li>
+          </ul>
+        </article>
+      </div>
+    </section>
+
+    <!-- Match Schedule -->
+    <section id="matches" class="section">
+      <h2>Match Schedule</h2>
+
+      <label class="filter" for="team-filter">
+        <span class="sr-only">Filter by team</span>
+        <select id="team-filter">
+          <option value="all">All Teams</option>
+          <option value="CSK">CSK</option>
+          <option value="MI">MI</option>
+          <option value="RCB">RCB</option>
+        </select>
+      </label>
+
+      <div class="table-wrap">
+        <table>
+          <thead>
+            <tr>
+              <th>Match No</th>
+              <th>Teams</th>
+              <th>Date and Time</th>
+              <th>Venue</th>
+              <th>General</th>
+              <th>Premium</th>
+              <th>VIP</th>
+              <th>Book</th>
+            </tr>
+          </thead>
+          <tbody id="schedule-body">
+            <tr data-match="1" data-teams="RCB CSK" data-general="1500" data-premium="3500" data-vip="8000">
+              <td>1</td>
+              <td>RCB vs CSK</td>
+              <td>28 March 7:30 PM</td>
+              <td>Bengaluru</td>
+              <td>1500</td>
+              <td>3500</td>
+              <td>8000</td>
+              <td><button type="button" class="btn btn-accent btn-small book-btn">Book</button></td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </section>
+
+    <!-- Book Ticket -->
+    <section id="book" class="section">
+      <h2>Book Ticket</h2>
+      <div class="booking-layout">
+
+        <form id="booking-form" class="card form">
+          <label for="match">Match</label>
+          <select id="match" name="match" required>
+            <option value="">Select a match</option>
+          </select>
+
+          <label for="stand">Stand</label>
+          <select id="stand" name="stand" required>
+            <option value="">Select a stand</option>
+            <option value="general">General</option>
+            <option value="premium">Premium</option>
+            <option value="vip">VIP</option>
+          </select>
+
+          <label for="tickets">Tickets</label>
+          <input type="number" id="tickets" name="tickets" min="1" max="10" value="1" required>
+
+          <label for="name">Name</label>
+          <input type="text" id="name" name="name" required>
+
+          <label for="email">Email</label>
+          <input type="email" id="email" name="email" required>
+
+          <label for="phone">Phone</label>
+          <input type="tel" id="phone" name="phone" pattern="[0-9]{10}" title="Enter a 10-digit phone number" required>
+
+          <button type="submit" class="btn btn-primary">Book</button>
+        </form>
+
+        <aside class="card summary">
+          <h3>Booking Summary</h3>
+          <dl>
+            <dt>Match:</dt>    <dd id="sum-match">-</dd>
+            <dt>Stand:</dt>    <dd id="sum-stand">-</dd>
+            <dt>Price:</dt>    <dd id="sum-price">-</dd>
+            <dt>Quantity:</dt> <dd id="sum-qty">-</dd>
+            <dt>Total:</dt>    <dd id="sum-total">-</dd>
+          </dl>
+        </aside>
+
+      </div>
+    </section>
+
+    <!-- My Bookings -->
+    <section id="bookings" class="section">
+      <h2>My Bookings</h2>
+      <div class="table-wrap">
+        <table>
+          <thead>
+            <tr>
+              <th>ID</th>
+              <th>Match</th>
+              <th>Stand</th>
+              <th>Tickets</th>
+              <th>Total</th>
+            </tr>
+          </thead>
+          <tbody id="bookings-body">
+            <tr class="empty-row"><td colspan="5">No bookings yet.</td></tr>
+          </tbody>
+        </table>
+      </div>
+    </section>
+
+    <!-- Guidelines -->
+    <section id="guidelines" class="section">
+      <h2>Guidelines</h2>
+      <div class="card-grid">
+        <article class="card">
+          <h3>Ticket Verification</h3>
+          <p>Show your ticket at the gate.</p>
+        </article>
+        <article class="card">
+          <h3>ID Proof Requirement</h3>
+          <p>Bring a photo ID.</p>
+        </article>
+        <article class="card">
+          <h3>Prohibited Items</h3>
+          <p>No outside food or bottles.</p>
+        </article>
+      </div>
+    </section>
+
+  </main>
+
+  <footer class="footer">
+    <p>Copyright 2026</p>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
