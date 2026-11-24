@@ -1,28 +1,51 @@
-# IPL Ticket Booking — Activity 2
+# Activity 7 - Selector Forms and Live Interaction Using JavaScript
 
-A simple IPL ticket-booking webpage demonstrating CSS styling.
+## IPL Ticket Booking
 
-## Files
-- `index.html` — sample webpage structure and content
-- `styles.css` — theme variables and responsive page styling
+This activity demonstrates how JavaScript can read values from form selectors and update a booking summary and total ticket price without reloading the page.
 
-## Run locally
-1. Download or clone this project.
-2. Open the folder in VS Code.
-3. Open `index.html` in a browser, or use the VS Code Live Server extension.
-4. Edit the sample match details to suit your project.
+### Files
 
-## GitHub upload
-From the project folder, run:
+- `index.html` - Booking form and Booking Summary Card
+- `app.js` - DOM selectors, event listeners, price calculation, and toast notifications
+- `style.css` - Basic page and summary-card styling
 
-```bash
-git add index.html styles.css README.md
-git commit -m "Activity 2: Style IPL Ticket Booking website with CSS"
-git push
-```
+### Features
 
-## Notes
-- The match fixtures are placeholders for demonstration. Replace them with confirmed details.
-- The booking form is front-end only; it does not submit bookings or process payments.
-- If you already have an `index.html`, keep your existing file and copy the stylesheet link from this sample's `<head>` into yours:
-  `<link rel="stylesheet" href="styles.css">`
+- Match selection using a `<select>` dropdown
+- Stand category selection using a `<select>` dropdown
+- Ticket quantity using a number input
+- Live Booking Summary updates
+- Automatic total price calculation
+- `change` and `input` event listeners
+- Toast notification using `showToast()`
+- Form submission without page reload
+
+### How to Run
+
+1. Open this folder in VS Code.
+2. Install/use the Live Server extension.
+3. Open `index.html` with Live Server.
+4. Change the match, stand category, and ticket quantity.
+5. Observe the Booking Summary and Total Price update instantly.
+
+### Example
+
+Selecting:
+
+- Match: CSK vs MI
+- Stand: Premium
+- Quantity: 3
+
+Produces:
+
+**Total Price: ₹3,000**
+
+## Activity 7 Deliverable
+
+Updated files:
+- `index.html`
+- `app.js`
+
+Additional supporting file:
+- `style.css`
