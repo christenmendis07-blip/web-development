@@ -1,0 +1,39 @@
+/* Append this to styles.css */
+
+/* Toast notifications (used by showToast() in app.js) */
+#toast-container {
+  position: fixed;
+  bottom: 24px;
+  right: 24px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  z-index: 2000;
+}
+
+.toast {
+  min-width: 220px;
+  max-width: 320px;
+  padding: 12px 18px;
+  border-radius: 8px;
+  color: #fff;
+  background: var(--primary, #1f3a93);
+  box-shadow: 0 4px 14px rgba(0, 0, 0, 0.25);
+  opacity: 0;
+  transform: translateY(20px);
+  transition: opacity 0.3s ease, transform 0.3s ease;
+}
+
+.toast.show {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.toast-success { background: #1e8e3e; }
+.toast-error   { background: #d93025; }
+.toast-info    { background: var(--primary, #1f3a93); }
+
+/* Keeps the fixed nav bar from covering the form after scrolling */
+#booking-form {
+  scroll-margin-top: 80px;
+}
